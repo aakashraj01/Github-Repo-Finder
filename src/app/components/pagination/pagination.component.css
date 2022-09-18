@@ -1,0 +1,28 @@
+.pag-container{
+    text-align: right;
+}
+
+.page-input{
+    width: 50px;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 4px;
+    /* border: 1px solid #666 ;
+    outline: none; */
+}
+
+input {
+    outline: none;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.input-container{
+    padding-right: 20px;
+}

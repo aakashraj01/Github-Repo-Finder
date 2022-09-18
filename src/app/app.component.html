@@ -1,0 +1,24 @@
+<ngb-alert [type]="'danger'" *ngIf="validateUser()" >Please Enter a Valid GitHub Username !</ngb-alert>
+
+<div class="container" *ngIf="!userFound || invalidUser" >
+    <h1> {{ title }} </h1>
+
+    <div class="inputBox">
+        <input type="text" name="username" [(ngModel)]="username" class="inputField">
+        <button mat-flat-button color="red" class="inputField" (click)="getResults()">Search User</button>
+    </div>
+</div>
+
+<div class="detailsContainer" *ngIf="userFound && !invalidUser" >
+    <app-main
+        (resetEvent)="reset()"
+        [username]="username"
+        [userDetails]="userDetails"
+        [userRepositories]="userRepositories"
+        [isDataRetrieved]="isDataRetrieved"
+        [page_size]="page_size"
+        [page_num]="page_num"
+    ></app-main>
+</div>
+
+<button (click)="reset()" class="home-button" *ngIf="userFound && !invalidUser"><img height="60px" width="60px" src = "../assets/icons8-home.svg" alt="Home"/></button>

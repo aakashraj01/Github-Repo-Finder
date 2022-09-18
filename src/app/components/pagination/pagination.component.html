@@ -1,0 +1,24 @@
+<div class="pag-container">
+
+    <span class="input-container">
+        <input type="text" class="page-input" [(ngModel)]="page_num" (change)="reloadRepos()" > of {{ (total_pages * ( 1.0 ) / page_size) | ceil }}
+    </span>
+
+    <div class="btn-group mr-3">
+        <button type="button" class="btn btn-primary">{{ page_size }}</button>
+        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+          <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+          <div class="dropdown-menu" ngbDropdownMenu>
+            <button ngbDropdownItem (click)="changePageSize(20)" >20</button>
+            <button ngbDropdownItem (click)="changePageSize(40)" >40</button>
+            <button ngbDropdownItem (click)="changePageSize(60)" >60</button>
+            <button ngbDropdownItem (click)="changePageSize(80)" >80</button>
+            <button ngbDropdownItem (click)="changePageSize(100)" >100</button>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div *ngIf="page_num <= 0 || page_num > maxPageNum()" style="text-align: right; color: red; font-size: 13px; padding-right: 30px;">
+    Please enter a valid Page Number.
+</div>

@@ -1,0 +1,36 @@
+.container{
+    width: 60%;
+    margin: 20%;
+}
+
+h1{
+    text-align: center;
+}
+
+.inputBox{
+    text-align: center;
+}
+
+.inputField{
+    height: 40px !important;
+}
+
+input{
+    border-radius: 5px;
+    margin-right: 20px;
+    width: 30%;
+}
+
+button{
+    width: 15%;
+}
+
+.home-button{
+    border: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 40px;
+    background-color: white;
+    width: auto;
+}

@@ -1,0 +1,21 @@
+<!-- <a (click)="reset()">Home</a> -->
+
+<div class="main-container">
+    <div class="head-container">
+        <app-user-details
+            [userDetails]="userDetails"
+            [isDataRetrieved]="isDataRetrieved"
+        ></app-user-details>
+    </div>
+    
+    <div class="foot-container">
+        <app-repository-list
+            [userRepositories]="userRepositories"
+            [isDataRetrieved]="isDataRetrieved"
+            [page_num]="page_num"
+            [page_size]="page_size"
+            [total_pages]="userDetails.public_repos"
+            (reloadRepoEvent)="selectPage($event)"
+        ></app-repository-list>
+    </div>
+</div>

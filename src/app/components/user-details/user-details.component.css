@@ -1,0 +1,36 @@
+.avatar-img{
+    border-radius: 50%;
+    height: 400px;
+    width: 400px;
+    padding: 20px;
+    border: 3px solid whitesmoke;
+}
+
+.head-container{
+    display: flex ;
+    margin-bottom: 40px;
+}
+
+.detail-container{
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+.user-name{
+    font-size: 70px;
+    font-family: 'Special Elite', cursive;
+}
+
+.user-bio{
+    font-size: 20px;
+    font-family: 'Josefin Slab', serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.item{
+    width: 100%;
+}

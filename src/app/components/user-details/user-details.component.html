@@ -1,0 +1,32 @@
+<div class="head-container">
+    <div class="img-container" *ngIf="isDataRetrieved">
+        <img src="{{ userDetails.avatar_url }}" alt="Image" class="avatar-img">
+    </div>
+    <div class="img-container"  *ngIf="!isDataRetrieved">
+        <ngx-skeleton-loader appearance="circle" [theme]="{ height: '400px',width: '400px'}"></ngx-skeleton-loader>
+    </div>
+    <div class="detail-container">
+        <div *ngIf="isDataRetrieved">
+            <h3 class="user-name" *ngIf="userDetails.name" >{{ userDetails.name }}</h3>
+            <h3 class="user-name" *ngIf="!userDetails.name" > Anonymous User </h3>
+        </div>
+        <div class="item" *ngIf="!isDataRetrieved">
+            <ngx-skeleton-loader appearance="line" [theme]="{ height: '80px',width: '800px'}" ></ngx-skeleton-loader>
+        </div>
+        <div *ngIf="isDataRetrieved">
+            <p class="user-bio" *ngIf="userDetails.bio" > {{ userDetails.bio }} </p>
+            <p class="user-bio" *ngIf="!userDetails.bio" > No Bio </p>
+        </div>
+        <div class="item" *ngIf="!isDataRetrieved">
+            <ngx-skeleton-loader appearance="line" [theme]="{ height: '100px',width: '800px'}" ></ngx-skeleton-loader>
+        </div>
+        <div *ngIf="isDataRetrieved">
+            <p class="user-bio" *ngIf="userDetails.location" > <fa-icon [icon]="faMapMarkerAlt" [styles]="{'color': '#50C878'}" ></fa-icon> {{ userDetails.location }} </p>
+            <p class="user-bio" *ngIf="userDetails.twitter_username" > <fa-icon [icon]="faTwitter" [styles]="{'color': '#1DA1F2'}" ></fa-icon> <a href="{{ 'https://twitter.com/' + userDetails.twitter_username }}"> https://twitter.com/{{ userDetails.twitter_username }}</a> </p>
+            <p class="user-bio" > <fa-icon [icon]="faLink" [styles]="{'color': 'black'}" ></fa-icon> <a href="{{ 'https://github.com/' + userDetails.html_url }}"> {{ userDetails.html_url }}</a> </p>
+        </div>
+        <div class="item" *ngIf="!isDataRetrieved">
+            <ngx-skeleton-loader count="3"></ngx-skeleton-loader>
+        </div>
+    </div>
+</div>
